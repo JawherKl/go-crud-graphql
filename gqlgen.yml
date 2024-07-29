@@ -4,8 +4,8 @@ schema:
 
 # Where should the generated server code go?
 exec:
-  filename: graph/generated.go
-  package: graph
+  filename: graph/generated/generated.go
+  package: generated
 
 # Uncomment to enable federation
 # federation:
@@ -66,6 +66,7 @@ resolver:
 # gqlgen will search for any type names in the schema in these go packages
 # if they match it will use them, otherwise it will generate them.
 autobind:
+  - "github.com/99designs/gqlgen/graphql"
 #  - "github.com/jawherkl/go-crud-graphql/graph/model"
 
 # This section declares type mapping between the GraphQL and go type systems

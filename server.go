@@ -8,6 +8,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/jawherkl/go-crud-graphql/graph"
+	"github.com/jawherkl/go-crud-graphql/graph/generated"
 	"github.com/joho/godotenv"
 )
 
@@ -19,15 +20,14 @@ func main() {
 		port = defaultPort
 	}
 
-	err := godotenv.Load(); if err != nil {
+	err := godotenv.Load(".env");
+	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
 	
 	//srv := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
 	Database := graph.Connect()
-   	srv := handler.NewDefaultServer(
-       generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{DB: Database}}))
-
+	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{DB: Database}}))
 
 	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
 	http.Handle("/query", srv)

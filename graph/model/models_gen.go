@@ -9,13 +9,7 @@ type Movie struct {
 	ReleaseDate string `json:"releaseDate"`
 }
 
-type Mutation struct {
-}
-
 type NewMovie struct {
 	Title string `json:"title"`
 	URL   string `json:"url"`
-}
-
-type Query struct {
 }
