@@ -96,3 +96,49 @@ mutation createMovie {
     releaseDate
   }
 }
+
+To update a movie, use the following GraphQL mutation:
+
+```graphql
+mutation {
+  updateMovie(input: {
+    id: 7
+    title: "GraphQL in Action (Updated)"
+  }) {
+    id
+    title
+    url
+    releaseDate
+  }
+}
+
+To delete a movie, use the following GraphQL mutation:
+
+```graphql
+mutation {
+  deleteMovie(id: 1)
+}
+
+To get all movie, use the following GraphQL mutation:
+
+```graphql
+query {
+  movies {
+    id
+    title
+    url
+    releaseDate
+  }
+}
+
+To get movie by id, use the following GraphQL mutation:
+
+```graphql
+query {
+  movie(id: 1) {
+    id
+    title
+    url
+    releaseDate
+  }
+}

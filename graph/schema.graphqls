@@ -7,6 +7,7 @@ type Movie {
 
 type Query {
  movies: [Movie!]!
+ movie(id: ID!): Movie
 }
 
 input NewMovie {
@@ -14,6 +15,14 @@ input NewMovie {
  url: String!
 }
 
+input UpdateMovie {
+  id: ID!
+  title: String
+  url: String
+}
+
 type Mutation {
  createMovie(input: NewMovie!): Movie!
+ updateMovie(input: UpdateMovie!): Movie!
+ deleteMovie(id: ID!): Boolean!
 }

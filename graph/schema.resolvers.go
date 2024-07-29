@@ -29,6 +29,39 @@ func (r *mutationResolver) CreateMovie(ctx context.Context, input model.NewMovie
 	return &movie, nil
 }
 
+// UpdateMovie is the resolver for the updateMovie field.
+func (r *mutationResolver) UpdateMovie(ctx context.Context, input model.UpdateMovie) (*model.Movie, error) {
+	movie := &model.Movie{ID: input.ID}
+	err := r.DB.Select(movie)
+	if err != nil {
+		return nil, fmt.Errorf("movie not found: %v", err)
+	}
+
+	if input.Title != nil {
+		movie.Title = *input.Title
+	}
+	if input.URL != nil {
+		movie.URL = *input.URL
+	}
+
+	_, err = r.DB.Model(movie).WherePK().Update()
+	if err != nil {
+		return nil, fmt.Errorf("error updating movie: %v", err)
+	}
+
+	return movie, nil
+}
+
+// DeleteMovie is the resolver for the deleteMovie field.
+func (r *mutationResolver) DeleteMovie(ctx context.Context, id string) (bool, error) {
+	movie := &model.Movie{ID: id}
+	_, err := r.DB.Model(movie).WherePK().Delete()
+	if err != nil {
+		return false, fmt.Errorf("error deleting movie: %v", err)
+	}
+	return true, nil
+}
+
 // Movies is the resolver for the movies field.
 func (r *queryResolver) Movies(ctx context.Context) ([]*model.Movie, error) {
 	var movies []*model.Movie
@@ -39,6 +72,16 @@ func (r *queryResolver) Movies(ctx context.Context) ([]*model.Movie, error) {
 	}
 
 	return movies, nil
+}
+
+// Movie is the resolver for the movie field.
+func (r *queryResolver) Movie(ctx context.Context, id string) (*model.Movie, error) {
+	movie := &model.Movie{ID: id}
+	err := r.DB.Select(movie)
+	if err != nil {
+		return nil, fmt.Errorf("movie not found: %v", err)
+	}
+	return movie, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.
