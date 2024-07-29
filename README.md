@@ -96,6 +96,7 @@ mutation createMovie {
     releaseDate
   }
 }
+```
 
 To update a movie, use the following GraphQL mutation:
 
@@ -111,6 +112,7 @@ mutation {
     releaseDate
   }
 }
+```
 
 To delete a movie, use the following GraphQL mutation:
 
@@ -118,6 +120,7 @@ To delete a movie, use the following GraphQL mutation:
 mutation {
   deleteMovie(id: 1)
 }
+```
 
 To get all movie, use the following GraphQL mutation:
 
@@ -130,6 +133,7 @@ query {
     releaseDate
   }
 }
+```
 
 To get movie by id, use the following GraphQL mutation:
 
@@ -142,3 +146,4 @@ query {
     releaseDate
   }
 }
+```
