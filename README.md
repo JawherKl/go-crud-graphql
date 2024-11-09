@@ -76,7 +76,6 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL
     ```
 
 ## Usage
-
 Once the server is running, you can access the GraphQL playground at `http://localhost:8080/`.
 
 ### Example Mutation
