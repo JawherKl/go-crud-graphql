@@ -80,7 +80,6 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL
 Once the server is running, you can access the GraphQL playground at `http://localhost:8080/`.
 
 ### Example Mutation
-
 To create a new movie, use the following GraphQL mutation:
 
 ```graphql
