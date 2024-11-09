@@ -10,7 +10,6 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL
 - Retrieve all movies.
 
 ## Technologies
-
 - Go
 - GraphQL
 - PostgreSQL
