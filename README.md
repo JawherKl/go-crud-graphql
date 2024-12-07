@@ -25,14 +25,12 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL
 ## Installation
 
 1. **Clone the repository:**
-
     ```sh
     git clone https://github.com/your-username/go-crud-graphql.git
     cd go-crud-graphql
     ```
 
 2. **Install dependencies:**
-
     ```sh
     go mod download
     ```
@@ -43,7 +41,6 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL
     ```
 
 4. **Set up environment variables:**
-
     Create a `.env` file in the root directory with the following content:
 
     ```plaintext
@@ -55,7 +52,6 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL
     ```
 
 5. **Create the `movies` table:**
-
     ```sql
     CREATE TABLE movies (
         id SERIAL PRIMARY KEY,
@@ -66,7 +62,6 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL
     ```
 
 6. **Run the server:**
-
     ```sh
     go run server.go
     ```
