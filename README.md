@@ -38,7 +38,6 @@ This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL
     ```
 
 3. **Create a PostgreSQL database:**
-
     ```sql
     CREATE DATABASE your_db_name;
     ```
