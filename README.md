@@ -135,3 +135,6 @@ query {
   }
 }
 ```
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/JawherKl/go-crud-graphql.svg?variant=adaptive)](https://starchart.cc/JawherKl/go-crud-graphql)
