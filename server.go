@@ -11,7 +11,7 @@ import (
 	"github.com/jawherkl/go-crud-graphql/graph"
 	"github.com/jawherkl/go-crud-graphql/graph/generated"
 	"github.com/joho/godotenv"
-)
+	)
 
 const defaultPort = "8080"
 
@@ -29,20 +29,20 @@ func main() {
 	// Connexion à la base de données
 	Database := graph.Connect()
 
-    // Création du serveur GraphQL
+    	// Création du serveur GraphQL
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{DB: Database}}))
 
 	// Configuration des en-têtes CORS
-    corsHandler := handlers.CORS(
-        handlers.AllowedOrigins([]string{"http://localhost:3000"}), // Autoriser les requêtes depuis ce domaine
-        handlers.AllowedMethods([]string{"GET", "POST", "OPTIONS"}),
-        handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}),
-    )
+    	corsHandler := handlers.CORS(
+        	handlers.AllowedOrigins([]string{"http://localhost:3000"}), // Autoriser les requêtes depuis ce domaine
+        	handlers.AllowedMethods([]string{"GET", "POST", "OPTIONS"}),
+        	handlers.AllowedHeaders([]string{"Content-Type", "Authorization"}),
+    	)
 
-    // Configuration des routes
-    http.Handle("/", playground.Handler("GraphQL playground", "/query"))
-    http.Handle("/query", corsHandler(srv))
+    	// Configuration des routes
+    	http.Handle("/", playground.Handler("GraphQL playground", "/query"))
+    	http.Handle("/query", corsHandler(srv))
 
-    log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
-    log.Fatal(http.ListenAndServe(":"+port, nil))
+    	log.Printf("connect to http://localhost:%s/ for GraphQL playground", port)
+    	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
