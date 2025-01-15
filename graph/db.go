@@ -8,7 +8,7 @@ import (
 )
 func Connect() *pg.DB {
    	//connStr := os.Getenv("DB_URL")
-   // Lire les informations de connexion depuis les variables d'environnement
+   	// Lire les informations de connexion depuis les variables d'environnement
 	user := os.Getenv("DB_USER")
 	password := os.Getenv("DB_PASSWORD")
 	addr := os.Getenv("DB_ADDR")
