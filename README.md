@@ -1,5 +1,7 @@
 # Go CRUD GraphQL API
-## Description
+
+![go-crud-graphql](https://github.com/JawherKl/go-crud-graphql/blob/main/go_graphql.png)
+
 This project is a CRUD (Create, Read, Update, Delete) API built with Go, GraphQL, and PostgreSQL. It uses the `gqlgen` library for GraphQL and `go-pg` for PostgreSQL interaction. The API allows you to create and retrieve movies with a title, URL, and release date.
 
 ## Features
