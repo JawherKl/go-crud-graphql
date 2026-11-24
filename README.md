@@ -138,5 +138,12 @@ query {
 }
 ```
 
-## Stargazers over time
-[![Stargazers over time](https://starchart.cc/JawherKl/go-crud-graphql.svg?variant=adaptive)](https://starchart.cc/JawherKl/go-crud-graphql)
+## Star History
+
+<a href="https://www.star-history.com/?repos=jawherkl%2Fgo-crud-graphql&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=jawherkl/go-crud-graphql&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=jawherkl/go-crud-graphql&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=jawherkl/go-crud-graphql&type=date&legend=top-left" />
+ </picture>
+</a>
